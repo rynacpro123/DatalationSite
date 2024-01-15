@@ -1,83 +1,21 @@
-from flask import Flask, render_template, url_for, request
-import os
-from dotenv import find_dotenv, load_dotenv
-import openai
+from flask import Flask, render_template, request, flash
 
-
-# Load environment variables from .env file (kickd)
-load_dotenv(override=True)
-import langchain
-
-
-
-
-#initialize flask appa
 flask_app = Flask(__name__)
+flask_app.secret_key = "manbearpig_MUDMAN888"
 
-
-#cranky old man prompt
-#messages = [{"role": "system", "content": "you are a very extremly cranky and antagonistic and angry old man that is also a helpful assistant. Your name is Kyle Bybee. You live in Utah but plan to move to Bellingham someday. Your going to be very wealthy someday. You use swear words a lot lot lot lot. "}]
-
-#christian dad prompt
-messages = [{"role": "system", "content": "you are a very sweet and approachable assistant that is also a father. You use dad jobkes a lot lot lot. You like to give words of wisdom from the bible.  "}]
-
-
-
-@flask_app.route('/')
-@flask_app.route('/home')
+@flask_app.route("/hello")
+@flask_app.route("/")
 def index():
-    return render_template("index.html")
+	flash("what's your name?")
+	return render_template("index.html")
 
-#
-# # Define the Chatbot route
-@flask_app.route("/chatbot", methods=["POST"])
-def chatbot():
-
-    while True:
-
-        #obtain the message value input by the user in the message form
-        user_input = request.form['message']
-
-        #append the human response to our input messages list for future calls to openai
-        messages.append({"role": "user", "content": user_input})
-
-        #call openai and pass along message list containing all system, assistance and user inputs within the messages list
-        response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",
-            temperature=0.9,
-            top_p=0.6,
-            max_tokens=200,
-            messages=messages
-        )
-
-        #extract the response text from the OpenAI API result
-        bot_response = response.choices[0].message.content
+@flask_app.route("/greet", methods=['POST', 'GET'])
+def greeter():
+	flash("Hi " + str(request.form['name_input']) + ", great to see you!")
+	return render_template("index.html")
 
 
 
-
-        #append the bot response to our input messages list for future calls to openai
-        messages.append({"role": "assistant", "content": bot_response})
-
-
-        #Render the chatbot template with the response text
-        return render_template(
-            "chatbot.html",
-            user_input=user_input,
-            bot_response=bot_response,
-        )
-
-#
-#
-# #
-# # @app.route('/about')
-# # def about():
-# #     return render_template("about.html")
-# #
-# #
-# # @app.route('/user/<string:name>/<int:id>')
-# # def user(name, id):
-# #     return "User name: " + name + " - id: " + str(id)
 
 #start the flask app
 if __name__ == "__main__":

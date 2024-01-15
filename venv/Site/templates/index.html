@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WINSTON V2.0</title>
-
+    <meta charset="UTF-8">
+    <title>Datalation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-
 <body>
-    <h1>Winston v2.0 -- Sweet old man edition</h1>
-    <form method="post" action="{{ url_for('chatbot') }}">
-        <label for="message">Message</label>
-        <input type="text" id="message" name="message" required>
-        <button type="submit">Send</button>
-    </form>
+    <!--<img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">-->
+    <img src="/static/images/logo1.jpg" class="resized-image">
+    <br>
+
+
+<ul class="link-list">
+  <li>
+    <span class="group-header">Group 1</span>
+    <ul class="sublink-list">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+    </ul>
+  </li>
+  <li>
+    <span class="group-header">Group 2</span>
+    <ul class="sublink-list">
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+    </ul>
+  </li>
+  <li>
+    <span class="group-header">Language Model Concepts</span>
+    <ul class="sublink-list">
+      <li><a href="#">Link 5</a></li>
+      <li><a href="https://www.google.com" class="green-link">Google</a></li>
+    </ul>
+  </li>
+  <li>
+    <span class="group-header">Language Model Shortcoming</span>
+    <ul class="sublink-list">
+      <li><a href="#">Link 7</a></li>
+      <li><a href="#">Link 8</a></li>
+    </ul>
+  </li>
+  <li>
+    <span class="group-header">Scholarly Data Science Links for LLMs</span>
+    <ul class="sublink-list">
+      <li><a href="https://blog.research.google/2017/08/transformer-novel-neural-network.html">Transformers</a></li>
+      <li><a href="https://arxiv.org/pdf/2210.03629.pdf">ReAct: Reason to Action in Language models</a></li>
+    </ul>
+  </li>
+</ul>
+
 </body>
-
-
 </html>
