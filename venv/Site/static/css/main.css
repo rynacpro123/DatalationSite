@@ -1,12 +1,14 @@
 
 html {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(to top, #005792, #ffffff);
+  background: linear-gradient(to bottom, #b3ccff, #ffffff);
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+
 
 body {
   padding: 100px;
