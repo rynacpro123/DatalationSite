@@ -39,7 +39,7 @@ body {
 .resized-image {
   display: block;
   float: right;
-  width: 6%;
+  width: 11%;
   margin-top: 20px;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
