@@ -1,9 +1,15 @@
-body {
+
+html {
   font-family: "Arial", sans-serif;
-  background-color: #C6DEF1;
+  background: linear-gradient(to top, #005792, #ffffff);
   margin: 0;
-  padding: 20px;
-  color: #333;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+body {
+  padding: 100px;
 }
 
 .link-list {
@@ -41,7 +47,7 @@ body {
   display: block;
   float: right;
   width: 11%;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
