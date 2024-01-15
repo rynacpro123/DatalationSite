@@ -1,6 +1,6 @@
 body {
   font-family: "Arial", sans-serif;
-  background-color: #f5f5f5;
+  background-color: #C6DEF1;
   margin: 0;
   padding: 20px;
   color: #333;
@@ -32,8 +32,9 @@ body {
 
 .sublink-list a {
   text-decoration: none;
-  color: #007f7b;
+  color: #0C406A;
   font-weight: bold;
+  font-style: italic;
 }
 
 .resized-image {
@@ -59,4 +60,9 @@ body {
   100% {
     transform: translateX(20px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
+}
+
+.underline-blue {
+  text-decoration: underline;
+  color: #413EA3;
 }

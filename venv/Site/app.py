@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash
 
 flask_app = Flask(__name__)
-flask_app.secret_key = "manbearpig_MUDMAN888"
+flask_app.secret_key = "Man_Bear_Pig"
 
 @flask_app.route("/hello")
 @flask_app.route("/")
