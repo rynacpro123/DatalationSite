@@ -6,7 +6,6 @@ flask_app.secret_key = "Man_Bear_Pig"
 @flask_app.route("/hello")
 @flask_app.route("/")
 def index():
-	flash("what's your name?")
 	return render_template("index.html")
 
 @flask_app.route("/greet", methods=['POST', 'GET'])
